@@ -1,5 +1,5 @@
 name: Test and Scan 
- on: 
+ 'on': 
  push:
  branches:
  -main
