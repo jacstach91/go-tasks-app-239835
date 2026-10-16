@@ -4,6 +4,6 @@ on:
     branches: [main]
 jobs:
   run_test:
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
