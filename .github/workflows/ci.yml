@@ -26,4 +26,14 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - run: pip install -r services/${{matrix.service}}/requirements.txt
       - run: pytest services/${{matrix.service}}
-      
+      - run: pytest 
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
+        with:
+          name: pytest-results
+          path: |
+            junit/test-results.xml
+            htmlcov/
+            coverage.xml
+          
