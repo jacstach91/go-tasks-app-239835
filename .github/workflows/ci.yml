@@ -1,0 +1,13 @@
+name:Test and Scan 
+ on: 
+ push:
+ branches:
+ -main
+ permissions:
+ contents: read
+ jobs:
+ test:
+ runs-on: ubuntu-lastest
+ steps:
+ -name: Pobierz kod repo
+ uses:actions/checkout@v7
