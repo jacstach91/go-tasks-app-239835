@@ -1,4 +1,4 @@
-name:Test and Scan 
+name: Test and Scan 
  on: 
  push:
  branches:
