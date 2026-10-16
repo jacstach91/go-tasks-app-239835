@@ -18,7 +18,7 @@ jobs:
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
       - run: pip install -r services/tasks-api/requirements.txt
-      - run: pytet services/tasks-api
+      - run: pytest services/tasks-api
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
