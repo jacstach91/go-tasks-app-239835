@@ -6,7 +6,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy: 
+      matrix:
+        service: [tasks-api, title-normalizer] 
+        
     steps:
       - uses: actions/checkout@v7
       - name: Set up Python
@@ -17,9 +20,10 @@ jobs:
           python-version: '3.12'
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
-      - run: pip install -r services/tasks-api/requirements.txt
-      - run: pytest services/tasks-api
+      
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-     
+      - run: pip install -r services/${{matrix.service}}/requirements.txt
+      - run: pytest services/${{matrix.service}}
+      
